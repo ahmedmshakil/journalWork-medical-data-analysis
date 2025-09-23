@@ -1,0 +1,36 @@
+Medical Centers Age Distribution Summary
+==================================================
+
+Total Patients: 331
+Total Medical Centers: 6
+
+Park View Hospital Limited:
+  Total Patients: 248
+  Age Range: 12-90 years
+  Mean Age: 45.1 ± 15.1 years
+
+Revive:
+  Total Patients: 36
+  Age Range: 19-78 years
+  Mean Age: 46.1 ± 13.1 years
+
+Chittagong Medical College:
+  Total Patients: 28
+  Age Range: 31-76 years
+  Mean Age: 52.5 ± 12.8 years
+
+Eagle'S Eye Diagnostic:
+  Total Patients: 9
+  Age Range: 14-65 years
+  Mean Age: 38.1 ± 17.2 years
+
+Ibn Sina:
+  Total Patients: 7
+  Age Range: 36-71 years
+  Mean Age: 50.1 ± 14.4 years
+
+Epic Healthcare:
+  Total Patients: 3
+  Age Range: 28-50 years
+  Mean Age: 39.3 ± 11.0 years
+

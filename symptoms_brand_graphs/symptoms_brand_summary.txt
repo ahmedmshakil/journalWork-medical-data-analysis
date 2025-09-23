@@ -1,0 +1,82 @@
+Symptoms Brand Distribution Summary
+==================================================
+
+Total Patients: 331
+Total Unique Symptoms: 152
+Analyzed Top 15 Symptoms
+
+ 1. Low Back Pain:
+    Total Patients: 68
+    Unique Brands: 10
+    Top Brand: esoral mups 20mg (35 patients)
+
+ 2. Neck Pain:
+    Total Patients: 23
+    Unique Brands: 2
+    Top Brand: esoral mups 20mg (20 patients)
+
+ 3. Coronary Artery Disease:
+    Total Patients: 9
+    Unique Brands: 5
+    Top Brand: Maxpro 20mg (3 patients)
+
+ 4. Chest Pain:
+    Total Patients: 8
+    Unique Brands: 5
+    Top Brand: pantomak 20mg (2 patients)
+
+ 5. Arrythmia:
+    Total Patients: 7
+    Unique Brands: 5
+    Top Brand: Pantonix 20mg (3 patients)
+
+ 6. Pregnency:
+    Total Patients: 7
+    Unique Brands: 3
+    Top Brand: zasper 20mg (3 patients)
+
+ 7. Shoulder Pain:
+    Total Patients: 6
+    Unique Brands: 2
+    Top Brand: esoral mups 20mg (5 patients)
+
+ 8. Hypertension:
+    Total Patients: 6
+    Unique Brands: 5
+    Top Brand: esoral mups 20mg (2 patients)
+
+ 9. Rheumatoid Arthritis:
+    Total Patients: 6
+    Unique Brands: 3
+    Top Brand: canalia 30mg (3 patients)
+
+10. Mi:
+    Total Patients: 5
+    Unique Brands: 2
+    Top Brand: Dexilend 30mg (3 patients)
+
+11. Axial Spondyloarthritis:
+    Total Patients: 5
+    Unique Brands: 4
+    Top Brand: canalia 30mg (2 patients)
+
+12. Joint Pain:
+    Total Patients: 5
+    Unique Brands: 3
+    Top Brand: othera 20mg (2 patients)
+
+13. Fever:
+    Total Patients: 4
+    Unique Brands: 3
+    Top Brand: esoral mups 20mg (2 patients)
+
+14. Knee Pain:
+    Total Patients: 4
+    Unique Brands: 2
+    Top Brand: esoral mups 20mg (3 patients)
+
+15. Finger Pain:
+    Total Patients: 3
+    Unique Brands: 2
+    Top Brand: esoral mups 20mg (2 patients)
+
