@@ -1,0 +1,51 @@
+Categorical Variables Distribution Summary
+==================================================
+
+Total Patients: 331
+Total Categorical Variables: 9
+
+ 1. Patient Name:
+    Total unique values: 309
+    Most common: monowara begum (4 records, 1.2%)
+    Missing values: 0
+
+ 2. Brand Name:
+    Total unique values: 30
+    Most common: esoral mups 20mg (99 records, 29.9%)
+    Missing values: 0
+
+ 3. Generic Name:
+    Total unique values: 9
+    Most common: esomeprazole (214 records, 64.7%)
+    Missing values: 0
+
+ 4. Company:
+    Total unique values: 20
+    Most common: skf (99 records, 29.9%)
+    Missing values: 0
+
+ 5. Area:
+    Total unique values: 1
+    Most common: chattogram (331 records, 100.0%)
+    Missing values: 0
+
+ 6. Medical Center:
+    Total unique values: 6
+    Most common: park view hospital limited (248 records, 74.9%)
+    Missing values: 0
+
+ 7. Gender:
+    Total unique values: 2
+    Most common: Female (173 records, 52.3%)
+    Missing values: 0
+
+ 8. Doctor Specialization:
+    Total unique values: 14
+    Most common: physical medicine and rehab (122 records, 36.9%)
+    Missing values: 0
+
+ 9. Symptoms:
+    Total unique values: 152
+    Most common: low back pain (68 records, 20.5%)
+    Missing values: 0
+
