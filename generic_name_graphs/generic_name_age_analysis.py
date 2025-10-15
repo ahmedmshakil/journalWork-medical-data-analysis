@@ -162,6 +162,181 @@ def create_summary_report(df, generic_counts, output_dir):
     
     print(f"\nSummary report saved: {summary_file}")
 
+def create_comprehensive_table(df, generic_counts, output_dir):
+    """Create a comprehensive table with all generic drug statistics"""
+    
+    # Initialize table data
+    table_data = []
+    
+    print(f"\n{'='*80}")
+    print("COMPREHENSIVE GENERIC DRUGS DATA TABLE")
+    print(f"{'='*80}")
+    
+    # Column headers
+    headers = [
+        "Generic Name", "Total Patients", "Male", "Female", "Male %", "Female %",
+        "Min Age", "Max Age", "Mean Age", "Age Std", "Age 11-20", "Age 21-30", 
+        "Age 31-40", "Age 41-50", "Age 51-60", "Age 61-70", "Age 71-80", "Age 81-90", "Age 91-100"
+    ]
+    
+    for generic, total_patients in generic_counts.items():
+        generic_data = df[df['Generic name'] == generic]
+        
+        # Get gender distribution
+        male_count, female_count = get_gender_distribution(generic_data)
+        male_pct = (male_count / total_patients * 100) if total_patients > 0 else 0
+        female_pct = (female_count / total_patients * 100) if total_patients > 0 else 0
+        
+        # Get age statistics
+        ages = generic_data['Age']
+        min_age = ages.min()
+        max_age = ages.max()
+        mean_age = ages.mean()
+        std_age = ages.std()
+        
+        # Get age distribution by bins
+        bins, bin_labels, age_counts = create_age_bins(ages)
+        
+        # Create row data
+        row = [
+            generic,
+            total_patients,
+            male_count,
+            female_count,
+            f"{male_pct:.1f}%",
+            f"{female_pct:.1f}%",
+            min_age,
+            max_age,
+            f"{mean_age:.1f}",
+            f"{std_age:.1f}",
+            age_counts[1],  # 11-20
+            age_counts[2],  # 21-30
+            age_counts[3],  # 31-40
+            age_counts[4],  # 41-50
+            age_counts[5],  # 51-60
+            age_counts[6],  # 61-70
+            age_counts[7],  # 71-80
+            age_counts[8],  # 81-90
+            age_counts[9]   # 91-100
+        ]
+        
+        table_data.append(row)
+    
+    # Create DataFrame for better formatting
+    table_df = pd.DataFrame(table_data, columns=headers)
+    
+    # Display table in console
+    print("\nGeneric Drugs Comprehensive Data Table:")
+    print("-" * 120)
+    for i, row in table_df.iterrows():
+        print(f"{row['Generic Name']:<20} | {row['Total Patients']:<4} | {row['Male']:<4} | {row['Female']:<4} | {row['Male %']:<6} | {row['Female %']:<6} | {row['Min Age']:<3} | {row['Max Age']:<3} | {row['Mean Age']:<6} | {row['Age Std']:<6}")
+    
+    print("\nAge Distribution by Groups:")
+    print("-" * 120)
+    print(f"{'Generic Name':<20} | {'11-20':<4} | {'21-30':<4} | {'31-40':<4} | {'41-50':<4} | {'51-60':<4} | {'61-70':<4} | {'71-80':<4} | {'81-90':<4} | {'91-100':<4}")
+    print("-" * 120)
+    for i, row in table_df.iterrows():
+        print(f"{row['Generic Name']:<20} | {row['Age 11-20']:<4} | {row['Age 21-30']:<4} | {row['Age 31-40']:<4} | {row['Age 41-50']:<4} | {row['Age 51-60']:<4} | {row['Age 61-70']:<4} | {row['Age 71-80']:<4} | {row['Age 81-90']:<4} | {row['Age 91-100']:<4}")
+    
+    # Save table as CSV file
+    csv_file = os.path.join(output_dir, 'generic_drugs_comprehensive_table.csv')
+    table_df.to_csv(csv_file, index=False)
+    print(f"\nComprehensive table saved as CSV: {csv_file}")
+    
+    # Save table as formatted text file
+    txt_file = os.path.join(output_dir, 'generic_drugs_comprehensive_table.txt')
+    with open(txt_file, 'w') as f:
+        f.write("COMPREHENSIVE GENERIC DRUGS DATA TABLE\n")
+        f.write("="*80 + "\n\n")
+        
+        f.write("Basic Statistics:\n")
+        f.write("-" * 50 + "\n")
+        f.write(f"{'Generic Name':<20} | {'Total':<5} | {'Male':<4} | {'Female':<6} | {'Male%':<6} | {'Female%':<7} | {'Min Age':<7} | {'Max Age':<7} | {'Mean Age':<8} | {'Std Age':<7}\n")
+        f.write("-" * 120 + "\n")
+        
+        for i, row in table_df.iterrows():
+            f.write(f"{row['Generic Name']:<20} | {row['Total Patients']:<5} | {row['Male']:<4} | {row['Female']:<6} | {row['Male %']:<6} | {row['Female %']:<7} | {row['Min Age']:<7} | {row['Max Age']:<7} | {row['Mean Age']:<8} | {row['Age Std']:<7}\n")
+        
+        f.write("\n\nAge Distribution by Groups:\n")
+        f.write("-" * 50 + "\n")
+        f.write(f"{'Generic Name':<20} | {'11-20':<5} | {'21-30':<5} | {'31-40':<5} | {'41-50':<5} | {'51-60':<5} | {'61-70':<5} | {'71-80':<5} | {'81-90':<5} | {'91-100':<6}\n")
+        f.write("-" * 120 + "\n")
+        
+        for i, row in table_df.iterrows():
+            f.write(f"{row['Generic Name']:<20} | {row['Age 11-20']:<5} | {row['Age 21-30']:<5} | {row['Age 31-40']:<5} | {row['Age 41-50']:<5} | {row['Age 51-60']:<5} | {row['Age 61-70']:<5} | {row['Age 71-80']:<5} | {row['Age 81-90']:<5} | {row['Age 91-100']:<6}\n")
+        
+        f.write(f"\n\nTotal Patients Analyzed: {len(df)}\n")
+        f.write(f"Total Generic Drugs: {len(generic_counts)}\n")
+        f.write(f"Generated on: {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+    
+    print(f"Comprehensive table saved as text: {txt_file}")
+    
+    return table_df
+
+def create_summary_statistics_table(df, generic_counts, output_dir):
+    """Create a summary statistics table for all generic drugs"""
+    
+    summary_stats = {
+        'Total Patients': [],
+        'Male Count': [],
+        'Female Count': [],
+        'Male Percentage': [],
+        'Female Percentage': [],
+        'Age Mean': [],
+        'Age Median': [],
+        'Age Std': [],
+        'Age Min': [],
+        'Age Max': [],
+        'Most Common Age Group': []
+    }
+    
+    generic_names = []
+    
+    for generic, total_patients in generic_counts.items():
+        generic_data = df[df['Generic name'] == generic]
+        
+        # Get gender distribution
+        male_count, female_count = get_gender_distribution(generic_data)
+        
+        # Get age statistics
+        ages = generic_data['Age']
+        
+        # Get most common age group
+        bins, bin_labels, age_counts = create_age_bins(ages)
+        max_age_group_idx = np.argmax(age_counts)
+        most_common_age_group = bin_labels[max_age_group_idx] if age_counts[max_age_group_idx] > 0 else "N/A"
+        
+        # Append data
+        generic_names.append(generic)
+        summary_stats['Total Patients'].append(total_patients)
+        summary_stats['Male Count'].append(male_count)
+        summary_stats['Female Count'].append(female_count)
+        summary_stats['Male Percentage'].append(f"{(male_count/total_patients*100):.1f}%")
+        summary_stats['Female Percentage'].append(f"{(female_count/total_patients*100):.1f}%")
+        summary_stats['Age Mean'].append(f"{ages.mean():.1f}")
+        summary_stats['Age Median'].append(f"{ages.median():.1f}")
+        summary_stats['Age Std'].append(f"{ages.std():.1f}")
+        summary_stats['Age Min'].append(ages.min())
+        summary_stats['Age Max'].append(ages.max())
+        summary_stats['Most Common Age Group'].append(most_common_age_group)
+    
+    # Create summary DataFrame
+    summary_df = pd.DataFrame(summary_stats, index=generic_names)
+    
+    # Save summary table
+    summary_csv = os.path.join(output_dir, 'generic_drugs_summary_statistics.csv')
+    summary_df.to_csv(summary_csv)
+    
+    print(f"\nSummary statistics table saved: {summary_csv}")
+    
+    # Print summary to console
+    print(f"\n{'='*80}")
+    print("SUMMARY STATISTICS TABLE")
+    print(f"{'='*80}")
+    print(summary_df.to_string())
+    
+    return summary_df
+
 def main():
     """Main function to run the analysis"""
     try:
@@ -190,13 +365,27 @@ def main():
         # Create summary report
         create_summary_report(df, generic_counts, output_dir)
         
+        # Create comprehensive data table
         print(f"\n{'='*70}")
-        print("All graphs generated successfully!")
-        print(f"Total files created: {len(generated_files)}")
+        print("GENERATING COMPREHENSIVE DATA TABLES...")
+        print(f"{'='*70}")
+        
+        comprehensive_table = create_comprehensive_table(df, generic_counts, output_dir)
+        summary_stats_table = create_summary_statistics_table(df, generic_counts, output_dir)
+        
+        print(f"\n{'='*70}")
+        print("All graphs and tables generated successfully!")
+        print(f"Graph files created: {len(generated_files)}")
+        print(f"Table files created: 3")
         print(f"Output directory: {output_dir}/")
-        print("Files created:")
+        print("\nGraph files:")
         for file in generated_files:
             print(f"  - {os.path.basename(file)}")
+        print("\nTable files:")
+        print(f"  - generic_drugs_summary.txt")
+        print(f"  - generic_drugs_comprehensive_table.csv")
+        print(f"  - generic_drugs_comprehensive_table.txt")
+        print(f"  - generic_drugs_summary_statistics.csv")
         print(f"{'='*70}")
         
     except FileNotFoundError:
