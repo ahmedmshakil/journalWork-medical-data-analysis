@@ -1,0 +1,50 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{caption}
+
+% Times New Roman font settings
+\usepackage{mathptmx} % Times font for text and math
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Define colors for IEEE standard (borderless style)
+\definecolor{headercolor}{HTML}{F0F0F0}
+\definecolor{altrowcolor}{HTML}{F9F9F9}
+
+\begin{document}
+
+\begin{table}[h!]
+\centering
+\caption{Generic Drug Distribution Analysis - Patient Demographics and Age Groups}
+\label{tab:generic_drugs_main}
+\begin{tabular}{@{}lcccccccccccccc@{}}
+\toprule
+\rowcolor{headercolor}
+\textbf{Generic Name} & \begin{tabular}[c]{@{}c@{}}\textbf{Total}\\\textbf{Patients}\end{tabular} & \textbf{Male} & \textbf{Female} & \begin{tabular}[c]{@{}c@{}}\textbf{Male}\\\textbf{\%}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Female}\\\textbf{\%}\end{tabular} & \textbf{11-20} & \textbf{21-30} & \textbf{31-40} & \textbf{41-50} & \textbf{51-60} & \textbf{61-70} & \textbf{71-80} & \textbf{81-90} \\
+\midrule
+Esomeprazole & 214 & 99 & 114 & 46.3 & 53.3 & 6 & 33 & 35 & 57 & 47 & 26 & 9 & 1 \\
+\rowcolor{altrowcolor}
+Pantoprazole Sodium & 26 & 19 & 7 & 73.1 & 26.9 & 2 & 0 & 7 & 3 & 6 & 3 & 3 & 1 \\
+Esomeprazole & 23 & 7 & 16 & 30.4 & 69.6 & 2 & 2 & 5 & 3 & 10 & 1 & 0 & 0 \\
+\rowcolor{altrowcolor}
+Dexlansoprazole & 21 & 11 & 10 & 52.4 & 47.6 & 0 & 0 & 5 & 9 & 3 & 2 & 1 & 1 \\
+Rabeprazole Sodium & 19 & 8 & 11 & 42.1 & 57.9 & 0 & 2 & 3 & 6 & 3 & 3 & 2 & 0 \\
+\rowcolor{altrowcolor}
+Dexlansoprazole & 19 & 10 & 9 & 52.6 & 47.4 & 0 & 2 & 2 & 2 & 5 & 6 & 2 & 0 \\
+Pantoprazole Sodium & 4 & 0 & 4 & 0.0 & 100.0 & 0 & 1 & 0 & 1 & 2 & 0 & 0 & 0 \\
+\rowcolor{altrowcolor}
+Famotidien & 3 & 2 & 1 & 66.7 & 33.3 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+Omeprazole & 2 & 1 & 1 & 50.0 & 50.0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.5cm}
+\centering
+\textit{Total Patients: 331 | Total Generic Drugs: 9 | Age Groups: Years}
+
+\end{document}

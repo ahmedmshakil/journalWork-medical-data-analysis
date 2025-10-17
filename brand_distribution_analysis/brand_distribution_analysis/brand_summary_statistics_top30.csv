@@ -1,0 +1,31 @@
+,Total Patients,Dataset Percentage,Male Count,Female Count,Gender Ratio (F:M),Age Mean,Age Std,Age Range,Unique Symptoms,Top Symptom
+esoral mups 20mg,99,29.9%,34,65,1.9:1,43.2,12.4,13-72,35,low back pain
+sergel 20mg,53,16.0%,28,25,0.9:1,44.4,16.5,15-80,31,low back pain
+exium mups 20mg,31,9.4%,11,19,1.7:1,46.2,15.1,14-75,23,low back pain
+Pantonix 20mg,24,7.3%,17,7,0.4:1,50.2,19.7,16-90,19,arrythmia
+maxpro 20mg,21,6.3%,12,9,0.8:1,43.9,17.0,12-71,20,iron deficiency anemia
+canalia 30mg,14,4.2%,6,8,1.3:1,43.2,12.3,26-65,11,rheumatoid arthritis
+Dexilend 30mg,11,3.3%,9,2,0.2:1,59.5,10.2,44-76,7,mi
+lanso d 30mg,10,3.0%,6,4,0.7:1,49.3,14.8,30-83,9,lumber radiculopathy
+othera 20mg,9,2.7%,5,4,0.8:1,44.2,12.7,28-60,8,joint pain
+rabe 20mg,8,2.4%,4,4,1.0:1,46.8,14.8,27-66,7,chest pain
+esonix 20mg,6,1.8%,6,0,0.0:1,48.0,13.4,22-56,5,Benign Paroxysmal Positional Vertigo
+zasper 20mg,6,1.8%,1,5,5.0:1,40.0,16.1,25-70,4,pregnency
+finix 20mg,5,1.5%,2,3,1.5:1,50.0,11.9,33-65,3,low back pain
+pantomak 20mg,5,1.5%,2,3,1.5:1,49.8,14.3,25-62,4,chest pain
+Maxpro 20mg,4,1.2%,4,0,0.0:1,55.8,3.3,52-59,2,coronary artery disease
+maxima mups 20mg,3,0.9%,2,1,0.5:1,55.3,18.4,35-71,3,"exertional breathlessness, loin pain"
+famotack 20mg,3,0.9%,2,1,0.5:1,40.0,18.5,19-54,3,low back pain
+remmo 20mg,2,0.6%,2,0,0.0:1,32.5,3.5,30-35,2,low back pain
+delpraz 20mg,2,0.6%,0,2,All F,55.0,1.4,54-56,2,"hypertension, asthma"
+xeldrin 20mg,2,0.6%,1,1,1.0:1,50.5,2.1,49-52,2,"asthma , hypertension"
+rabprazo 20mg,2,0.6%,1,1,1.0:1,37.5,3.5,35-40,1,pregnency
+Finix 20mg,2,0.6%,1,1,1.0:1,52.0,28.3,32-72,2,mi 
+esotid 20mg,2,0.6%,1,1,1.0:1,30.0,14.1,20-40,1,low back pain
+pantonix 20mg,1,0.3%,0,1,All F,43.0,nan,43-43,1,low back pain
+dexogut 20mg,1,0.3%,0,1,All F,39.0,nan,39-39,1,axial spondyloarthritis
+neptor 20mg,1,0.3%,0,1,All F,48.0,nan,48-48,1,"thyrotoxicosis, dyslipidemia, psoriasis"
+dexlan 30mg,1,0.3%,0,1,All F,48.0,nan,48-48,1,"obesity, asthma, hypothyrodism"
+acifix 20,1,0.3%,0,1,All F,48.0,nan,48-48,1,mixed connective tissue disease
+paricel 20mg,1,0.3%,0,1,All F,76.0,nan,76-76,1,"hypertension, ishchemic heart disease"
+sanbur 30mg,1,0.3%,0,1,All F,76.0,nan,76-76,1,"Ischemic Heart Disease, hypertension, dyslipedemia"

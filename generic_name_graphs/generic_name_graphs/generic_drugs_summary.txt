@@ -1,0 +1,60 @@
+Generic Drugs Age Distribution Summary
+==================================================
+
+Total Patients: 331
+Total Generic Drugs: 9
+
+Esomeprazole:
+  Total Patients: 214
+  Male: 99, Female: 114
+  Age Range: 12-80 years
+  Mean Age: 44.3 ± 14.4 years
+
+Pantoprazole Sodium:
+  Total Patients: 26
+  Male: 19, Female: 7
+  Age Range: 16-90 years
+  Mean Age: 50.8 ± 19.1 years
+
+Esomeprazole:
+  Total Patients: 23
+  Male: 7, Female: 16
+  Age Range: 17-62 years
+  Mean Age: 43.0 ± 13.7 years
+
+Dexlansoprazole:
+  Total Patients: 21
+  Male: 11, Female: 10
+  Age Range: 30-83 years
+  Mean Age: 48.7 ± 13.4 years
+
+Rabeprazole Sodium:
+  Total Patients: 19
+  Male: 8, Female: 11
+  Age Range: 27-76 years
+  Mean Age: 48.8 ± 14.8 years
+
+Dexlansoprazole:
+  Total Patients: 19
+  Male: 10, Female: 9
+  Age Range: 26-76 years
+  Mean Age: 52.8 ± 14.4 years
+
+Pantoprazole Sodium:
+  Total Patients: 4
+  Male: 0, Female: 4
+  Age Range: 25-55 years
+  Mean Age: 43.8 ± 13.5 years
+
+Famotidien:
+  Total Patients: 3
+  Male: 2, Female: 1
+  Age Range: 19-54 years
+  Mean Age: 40.0 ± 18.5 years
+
+Omeprazole:
+  Total Patients: 2
+  Male: 1, Female: 1
+  Age Range: 49-52 years
+  Mean Age: 50.5 ± 2.1 years
+

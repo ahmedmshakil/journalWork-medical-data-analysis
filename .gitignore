@@ -54,3 +54,9 @@ Thumbs.db
 
 # Logs
 *.log
+
+# LaTeX
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz

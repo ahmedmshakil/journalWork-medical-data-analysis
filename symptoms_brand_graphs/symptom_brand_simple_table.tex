@@ -1,0 +1,62 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{graphicx}
+
+% Times New Roman font settings
+\usepackage{mathptmx} % Times font for text and math
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Define colors for IEEE standard (borderless style)
+\definecolor{headercolor}{HTML}{F0F0F0}
+\definecolor{altrowcolor}{HTML}{F9F9F9}
+
+\begin{document}
+
+\begin{table}[h!]
+\centering
+\caption{Symptom-Brand Distribution Analysis - Patient Demographics and Brand Preferences}
+\label{tab:symptom_brand_main}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lcccccccc@{}}
+\toprule
+\rowcolor{headercolor}
+\textbf{Symptom} & \begin{tabular}[c]{@{}c@{}}\textbf{Total}\\\textbf{Patients}\end{tabular} & \textbf{Male} & \textbf{Female} & \begin{tabular}[c]{@{}c@{}}\textbf{Male}\\\textbf{\%}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Female}\\\textbf{\%}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Unique}\\\textbf{Brands}\end{tabular} & \textbf{Top Brand} & \begin{tabular}[c]{@{}c@{}}\textbf{Top Brand}\\\textbf{\%}\end{tabular} \\
+\midrule
+Low back pain & 68 & 31 & 37 & 45.6 & 54.4 & 10 & esoral mups 20mg & 51.5 \\
+\rowcolor{altrowcolor}
+Neck pain & 23 & 10 & 13 & 43.5 & 56.5 & 2 & esoral mups 20mg & 87.0 \\
+Coronary artery disease & 9 & 9 & 0 & 100.0 & 0.0 & 5 & Maxorc 20mg & 33.3 \\
+\rowcolor{altrowcolor}
+Chest pain & 8 & 6 & 2 & 75.0 & 25.0 & 5 & pantomax 20mg & 25.0 \\
+Arrhythmia & 7 & 5 & 2 & 71.4 & 28.6 & 5 & Pantonix 20mg & 42.9 \\
+\rowcolor{altrowcolor}
+Pregnancy & 7 & 1 & 6 & 14.3 & 85.7 & 3 & zaxpan 20mg & 42.9 \\
+Shoulder pain & 6 & 0 & 6 & 0.0 & 100.0 & 2 & esoral mups 20mg & 83.3 \\
+\rowcolor{altrowcolor}
+Hypertension & 6 & 4 & 2 & 66.7 & 33.3 & 1 & esoral mups 20mg & 33.3 \\
+Rheumatoid arthritis & 6 & 2 & 4 & 33.3 & 66.7 & 3 & canalia 30mg & 50.0 \\
+\rowcolor{altrowcolor}
+MI & 5 & 5 & 0 & 100.0 & 0.0 & 2 & Dexilene 30mg & 60.0 \\
+Axial spondyloarthritis & 5 & 3 & 2 & 60.0 & 40.0 & 4 & canalia 30mg & 40.0 \\
+\rowcolor{altrowcolor}
+Joint pain & 5 & 1 & 4 & 20.0 & 80.0 & 3 & othera 20mg & 40.0 \\
+Fever & 4 & 1 & 3 & 25.0 & 75.0 & 3 & esoral mups 20mg & 50.0 \\
+\rowcolor{altrowcolor}
+Knee pain & 4 & 2 & 2 & 50.0 & 50.0 & 2 & esoral mups 20mg & 75.0 \\
+Finger pain & 3 & 3 & 0 & 100.0 & 0.0 & 2 & esoral mups 20mg & 66.7 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\vspace{0.5cm}
+\centering
+\textit{Total Patients: 331 | Total Symptoms Analyzed: 15 | Top 15 Symptoms}
+
+\end{document}

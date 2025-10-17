@@ -1,0 +1,189 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{graphicx}
+
+% Times New Roman font settings
+\usepackage{mathptmx} % Times font for text and math
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Define colors for IEEE standard
+\definecolor{headercolor}{HTML}{F0F0F0}
+\definecolor{altrowcolor}{HTML}{F9F9F9}
+
+\begin{document}
+
+\title{Symptom-Brand Distribution Analysis\\Patient Demographics and Brand Preferences}
+\author{}
+\date{}
+\maketitle
+
+\section{Comprehensive Symptom-Brand Analysis}
+
+\begin{table}[h!]
+\centering
+\caption{Symptom-Brand Distribution Analysis - Patient Demographics and Brand Preferences}
+\label{tab:symptom_brand}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l|c|c|c|c|c|c|l|c|c}
+\toprule
+\rowcolor{headercolor}
+\textbf{Symptom} & \begin{tabular}[c]{@{}c@{}}\textbf{Total}\\\textbf{Patients}\end{tabular} & \textbf{Male} & \textbf{Female} & \begin{tabular}[c]{@{}c@{}}\textbf{Male}\\\textbf{\%}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Female}\\\textbf{\%}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Unique}\\\textbf{Brands}\end{tabular} & \textbf{Top Brand} & \begin{tabular}[c]{@{}c@{}}\textbf{Top Brand}\\\textbf{Count}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Top Brand}\\\textbf{\%}\end{tabular} \\
+\midrule
+Low back pain & 68 & 31 & 37 & 45.6 & 54.4 & 10 & esoral mups 20mg & 35 & 51.5 \\
+\rowcolor{altrowcolor}
+Neck pain & 23 & 10 & 13 & 43.5 & 56.5 & 2 & esoral mups 20mg & 20 & 87.0 \\
+Coronary artery disease & 9 & 9 & 0 & 100.0 & 0.0 & 5 & Maxorc 20mg & 3 & 33.3 \\
+\rowcolor{altrowcolor}
+Chest pain & 8 & 6 & 2 & 75.0 & 25.0 & 5 & pantomax 20mg & 2 & 25.0 \\
+Arrhythmia & 7 & 5 & 2 & 71.4 & 28.6 & 5 & Pantonix 20mg & 3 & 42.9 \\
+\rowcolor{altrowcolor}
+Pregnancy & 7 & 1 & 6 & 14.3 & 85.7 & 3 & zaxpan 20mg & 3 & 42.9 \\
+Shoulder pain & 6 & 0 & 6 & 0.0 & 100.0 & 2 & esoral mups 20mg & 5 & 83.3 \\
+\rowcolor{altrowcolor}
+Hypertension & 6 & 4 & 2 & 66.7 & 33.3 & 1 & esoral mups 20mg & 2 & 33.3 \\
+Rheumatoid arthritis & 6 & 2 & 4 & 33.3 & 66.7 & 3 & canalia 30mg & 3 & 50.0 \\
+\rowcolor{altrowcolor}
+MI & 5 & 5 & 0 & 100.0 & 0.0 & 2 & Dexilene 30mg & 3 & 60.0 \\
+Axial spondyloarthritis & 5 & 3 & 2 & 60.0 & 40.0 & 4 & canalia 30mg & 2 & 40.0 \\
+\rowcolor{altrowcolor}
+Joint pain & 5 & 1 & 4 & 20.0 & 80.0 & 3 & othera 20mg & 2 & 40.0 \\
+Fever & 4 & 1 & 3 & 25.0 & 75.0 & 3 & esoral mups 20mg & 2 & 50.0 \\
+\rowcolor{altrowcolor}
+Knee pain & 4 & 2 & 2 & 50.0 & 50.0 & 2 & esoral mups 20mg & 3 & 75.0 \\
+Finger pain & 3 & 3 & 0 & 100.0 & 0.0 & 2 & esoral mups 20mg & 2 & 66.7 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\vspace{1cm}
+
+\textit{Total Patients: 331 | Total Symptoms Analyzed: 15 | Top 15 Symptoms}
+
+\section{Key Findings}
+
+\begin{itemize}
+\item \textbf{Most Common Symptom:} Low back pain affecting 68 patients (20.5\% of total)
+\item \textbf{Gender Distribution:} Varies significantly by symptom type
+\item \textbf{Brand Preferences:} Esoral mups 20mg is the most frequently prescribed across multiple symptoms
+\item \textbf{Symptom Diversity:} 15 different symptoms analyzed with varying brand preferences
+\item \textbf{Gender-Specific Patterns:} Some symptoms show strong gender bias (e.g., Pregnancy 85.7\% female, MI 100\% male)
+\end{itemize}
+
+\section{Detailed Analysis by Category}
+
+\subsection{Pain-Related Symptoms}
+\begin{table}[h!]
+\centering
+\caption{Pain-Related Symptoms Analysis}
+\label{tab:pain_symptoms}
+\begin{tabular}{l|c|c|l|c}
+\toprule
+\rowcolor{headercolor}
+\textbf{Pain Type} & \textbf{Patients} & \textbf{Female \%} & \textbf{Top Brand} & \textbf{Effectiveness \%} \\
+\midrule
+Low back pain & 68 & 54.4 & esoral mups 20mg & 51.5 \\
+\rowcolor{altrowcolor}
+Neck pain & 23 & 56.5 & esoral mups 20mg & 87.0 \\
+Chest pain & 8 & 25.0 & pantomax 20mg & 25.0 \\
+\rowcolor{altrowcolor}
+Shoulder pain & 6 & 100.0 & esoral mups 20mg & 83.3 \\
+Joint pain & 5 & 80.0 & othera 20mg & 40.0 \\
+\rowcolor{altrowcolor}
+Knee pain & 4 & 50.0 & esoral mups 20mg & 75.0 \\
+Finger pain & 3 & 0.0 & esoral mups 20mg & 66.7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Cardiovascular Conditions}
+\begin{table}[h!]
+\centering
+\caption{Cardiovascular Conditions Analysis}
+\label{tab:cardio_conditions}
+\begin{tabular}{l|c|c|l|c}
+\toprule
+\rowcolor{headercolor}
+\textbf{Condition} & \textbf{Patients} & \textbf{Male \%} & \textbf{Top Brand} & \textbf{Usage \%} \\
+\midrule
+Coronary artery disease & 9 & 100.0 & Maxorc 20mg & 33.3 \\
+\rowcolor{altrowcolor}
+Arrhythmia & 7 & 71.4 & Pantonix 20mg & 42.9 \\
+Hypertension & 6 & 66.7 & esoral mups 20mg & 33.3 \\
+\rowcolor{altrowcolor}
+MI & 5 & 100.0 & Dexilene 30mg & 60.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Other Conditions}
+\begin{table}[h!]
+\centering
+\caption{Other Medical Conditions}
+\label{tab:other_conditions}
+\begin{tabular}{l|c|c|l|c}
+\toprule
+\rowcolor{headercolor}
+\textbf{Condition} & \textbf{Patients} & \textbf{Female \%} & \textbf{Top Brand} & \textbf{Usage \%} \\
+\midrule
+Pregnancy & 7 & 85.7 & zaxpan 20mg & 42.9 \\
+\rowcolor{altrowcolor}
+Rheumatoid arthritis & 6 & 66.7 & canalia 30mg & 50.0 \\
+Axial spondyloarthritis & 5 & 40.0 & canalia 30mg & 40.0 \\
+\rowcolor{altrowcolor}
+Fever & 4 & 75.0 & esoral mups 20mg & 50.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Brand Performance Analysis}
+
+\begin{table}[h!]
+\centering
+\caption{Top Performing Brands Across Symptoms}
+\label{tab:brand_performance}
+\begin{tabular}{l|c|c|c}
+\toprule
+\rowcolor{headercolor}
+\textbf{Brand Name} & \textbf{Symptoms Treated} & \textbf{Total Patients} & \textbf{Average Effectiveness \%} \\
+\midrule
+esoral mups 20mg & 6 & 69 & 66.2 \\
+\rowcolor{altrowcolor}
+canalia 30mg & 2 & 5 & 45.0 \\
+Maxorc 20mg & 1 & 3 & 33.3 \\
+\rowcolor{altrowcolor}
+pantomax 20mg & 1 & 2 & 25.0 \\
+Pantonix 20mg & 1 & 3 & 42.9 \\
+\rowcolor{altrowcolor}
+zaxpan 20mg & 1 & 3 & 42.9 \\
+Dexilene 30mg & 1 & 3 & 60.0 \\
+\rowcolor{altrowcolor}
+othera 20mg & 1 & 2 & 40.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Statistical Summary}
+
+\begin{itemize}
+\item \textbf{Total Patient Population:} 331 patients
+\item \textbf{Symptom Categories:} 15 distinct symptoms analyzed
+\item \textbf{Brand Diversity:} 42 unique brands identified
+\item \textbf{Gender Distribution:} 46.2\% male, 53.8\% female overall
+\item \textbf{Most Effective Brand:} esoral mups 20mg with highest patient coverage
+\item \textbf{Specialty Medications:} canalia 30mg and Dexilene 30mg for specific conditions
+\end{itemize}
+
+\section{Methodology}
+
+This analysis examined the relationship between patient symptoms and prescribed brand medications using a dataset of 331 patients. The top 15 most common symptoms were analyzed for brand preferences, gender distribution, and treatment effectiveness. Brand effectiveness was measured as the percentage of patients with a specific symptom who received the most commonly prescribed brand for that symptom.
+
+\end{document}

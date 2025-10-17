@@ -1,0 +1,27 @@
+COMPREHENSIVE SYMPTOM-BRAND DATA TABLE
+================================================================================
+
+Basic Statistics:
+--------------------------------------------------
+Symptom                   | Total | Male | Female | Male%  | Female% | Brands | Top Brand            | Count
+------------------------------------------------------------------------------------------------------------------------------------------------------
+low back pain             | 68    | 31   | 37     | 45.6%  | 54.4%   | 10     | esoral mups 20mg     | 35   
+neck pain                 | 23    | 10   | 13     | 43.5%  | 56.5%   | 2      | esoral mups 20mg     | 20   
+coronary artery disease   | 9     | 9    | 0      | 100.0% | 0.0%    | 5      | Maxpro 20mg          | 3    
+chest pain                | 8     | 6    | 2      | 75.0%  | 25.0%   | 5      | pantomak 20mg        | 2    
+arrythmia                 | 7     | 5    | 2      | 71.4%  | 28.6%   | 5      | Pantonix 20mg        | 3    
+pregnency                 | 7     | 1    | 6      | 14.3%  | 85.7%   | 3      | zasper 20mg          | 3    
+shoulder pain             | 6     | 0    | 6      | 0.0%   | 100.0%  | 2      | esoral mups 20mg     | 5    
+hypertension              | 6     | 4    | 2      | 66.7%  | 33.3%   | 5      | esoral mups 20mg     | 2    
+rheumatoid arthritis      | 6     | 2    | 4      | 33.3%  | 66.7%   | 3      | canalia 30mg         | 3    
+mi                        | 5     | 5    | 0      | 100.0% | 0.0%    | 2      | Dexilend 30mg        | 3    
+axial spondyloarthritis   | 5     | 3    | 2      | 60.0%  | 40.0%   | 4      | canalia 30mg         | 2    
+joint pain                | 5     | 1    | 4      | 20.0%  | 80.0%   | 3      | othera 20mg          | 2    
+fever                     | 4     | 1    | 3      | 25.0%  | 75.0%   | 3      | esoral mups 20mg     | 2    
+knee pain                 | 4     | 2    | 2      | 50.0%  | 50.0%   | 2      | esoral mups 20mg     | 3    
+finger pain               | 3     | 3    | 0      | 100.0% | 0.0%    | 2      | esoral mups 20mg     | 2    
+
+
+Total Patients Analyzed: 331
+Total Symptoms Analyzed: 15
+Generated on: 2025-10-15 20:07:20

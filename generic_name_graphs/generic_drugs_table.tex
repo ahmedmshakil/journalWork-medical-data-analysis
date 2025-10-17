@@ -1,0 +1,164 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{graphicx}
+
+% Times New Roman font settings
+\usepackage{mathptmx} % Times font for text and math
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Define colors for IEEE standard
+\definecolor{headercolor}{HTML}{F0F0F0}
+\definecolor{altrowcolor}{HTML}{F9F9F9}
+
+\begin{document}
+
+\title{Generic Drug Distribution Analysis\\Patient Demographics and Age Groups}
+\author{}
+\date{}
+\maketitle
+
+\section{Comprehensive Generic Drug Analysis}
+
+\begin{table}[h!]
+\centering
+\caption{Generic Drug Distribution Analysis - Patient Demographics and Age Groups}
+\label{tab:generic_drugs}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l|c|c|c|c|c|c|c|c|c|c|c|c|c}
+\toprule
+\rowcolor{headercolor}
+\textbf{Generic Name} & \textbf{Total} & \textbf{Male} & \textbf{Female} & \textbf{Male} & \textbf{Female} & \textbf{11-20} & \textbf{21-30} & \textbf{31-40} & \textbf{41-50} & \textbf{51-60} & \textbf{61-70} & \textbf{71-80} & \textbf{81-90} \\
+\rowcolor{headercolor}
+& \textbf{Patients} & & & \textbf{\%} & \textbf{\%} & & & & & & & & \\
+\midrule
+Esomeprazole & 214 & 99 & 114 & 46.3 & 53.3 & 6 & 33 & 35 & 57 & 47 & 26 & 9 & 1 \\
+\rowcolor{altrowcolor}
+Pantoprazole Sodium & 26 & 19 & 7 & 73.1 & 26.9 & 2 & 0 & 7 & 3 & 6 & 3 & 3 & 1 \\
+Esomeprazole & 23 & 7 & 16 & 30.4 & 69.6 & 2 & 2 & 5 & 3 & 10 & 1 & 0 & 0 \\
+\rowcolor{altrowcolor}
+Dexlansoprazole & 21 & 11 & 10 & 52.4 & 47.6 & 0 & 0 & 5 & 9 & 3 & 2 & 1 & 1 \\
+Rabeprazole Sodium & 19 & 8 & 11 & 42.1 & 57.9 & 0 & 2 & 3 & 6 & 3 & 3 & 2 & 0 \\
+\rowcolor{altrowcolor}
+Dexlansoprazole & 19 & 10 & 9 & 52.6 & 47.4 & 0 & 2 & 2 & 2 & 5 & 6 & 2 & 0 \\
+Pantoprazole Sodium & 4 & 0 & 4 & 0.0 & 100.0 & 0 & 1 & 0 & 1 & 2 & 0 & 0 & 0 \\
+\rowcolor{altrowcolor}
+Famotidien & 3 & 2 & 1 & 66.7 & 33.3 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+Omeprazole & 2 & 1 & 1 & 50.0 & 50.0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\vspace{1cm}
+
+\textit{Total Patients: 331 | Total Generic Drugs: 9 | Age Groups: Years}
+
+\section{Summary Statistics}
+
+\begin{table}[h!]
+\centering
+\caption{Generic Drug Summary Statistics}
+\label{tab:summary_stats}
+\begin{tabular}{l|c|c|c|c}
+\toprule
+\rowcolor{headercolor}
+\textbf{Generic Name} & \textbf{Total Patients} & \textbf{Age Min} & \textbf{Age Max} & \textbf{Most Common Age Group} \\
+\midrule
+Esomeprazole & 214 & 12 & 80 & 41-50 (57 patients) \\
+\rowcolor{altrowcolor}
+Pantoprazole Sodium & 26 & 16 & 90 & 41-50 (3 patients) \\
+Esomeprazole & 23 & 17 & 62 & 51-60 (10 patients) \\
+\rowcolor{altrowcolor}
+Dexlansoprazole & 21 & 30 & 83 & 41-50 (9 patients) \\
+Rabeprazole Sodium & 19 & 27 & 76 & 41-50 (6 patients) \\
+\rowcolor{altrowcolor}
+Dexlansoprazole & 19 & 26 & 76 & 61-70 (6 patients) \\
+Pantoprazole Sodium & 4 & 25 & 55 & 51-60 (2 patients) \\
+\rowcolor{altrowcolor}
+Famotidien & 3 & 19 & 54 & Multiple groups \\
+Omeprazole & 2 & 49 & 52 & Multiple groups \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Detailed Age Distribution}
+
+\begin{table}[h!]
+\centering
+\caption{Age Distribution Analysis by Generic Drug - Detailed Breakdown}
+\label{tab:age_distribution}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l|c|c|c|c|c|c|c|c|c|c|c}
+\toprule
+\rowcolor{headercolor}
+\textbf{Generic Name} & \textbf{0-10} & \textbf{11-20} & \textbf{21-30} & \textbf{31-40} & \textbf{41-50} & \textbf{51-60} & \textbf{61-70} & \textbf{71-80} & \textbf{81-90} & \textbf{91-100} & \textbf{Total} \\
+\midrule
+Esomeprazole & 0 & 6 & 33 & 35 & 57 & 47 & 26 & 9 & 1 & 0 & 214 \\
+\rowcolor{altrowcolor}
+Pantoprazole Sodium & 0 & 2 & 0 & 7 & 3 & 6 & 3 & 3 & 1 & 1 & 26 \\
+Esomeprazole & 0 & 2 & 2 & 5 & 3 & 10 & 1 & 0 & 0 & 0 & 23 \\
+\rowcolor{altrowcolor}
+Dexlansoprazole & 0 & 0 & 0 & 5 & 9 & 3 & 2 & 1 & 1 & 0 & 21 \\
+Rabeprazole Sodium & 0 & 0 & 2 & 3 & 6 & 3 & 3 & 2 & 0 & 0 & 19 \\
+\rowcolor{altrowcolor}
+Dexlansoprazole & 0 & 0 & 2 & 2 & 2 & 5 & 6 & 2 & 0 & 0 & 19 \\
+Pantoprazole Sodium & 0 & 0 & 1 & 0 & 1 & 2 & 0 & 0 & 0 & 0 & 4 \\
+\rowcolor{altrowcolor}
+Famotidien & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 3 \\
+Omeprazole & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 2 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\section{Gender Distribution Analysis}
+
+\begin{table}[h!]
+\centering
+\caption{Gender Distribution by Generic Drug}
+\label{tab:gender_distribution}
+\begin{tabular}{l|c|c|c|c|c}
+\toprule
+\rowcolor{headercolor}
+\textbf{Generic Name} & \textbf{Total Patients} & \textbf{Male Count} & \textbf{Female Count} & \textbf{Male \%} & \textbf{Female \%} \\
+\midrule
+Esomeprazole & 214 & 99 & 114 & 46.3\% & 53.3\% \\
+\rowcolor{altrowcolor}
+Pantoprazole Sodium & 26 & 19 & 7 & 73.1\% & 26.9\% \\
+Esomeprazole & 23 & 7 & 16 & 30.4\% & 69.6\% \\
+\rowcolor{altrowcolor}
+Dexlansoprazole & 21 & 11 & 10 & 52.4\% & 47.6\% \\
+Rabeprazole Sodium & 19 & 8 & 11 & 42.1\% & 57.9\% \\
+\rowcolor{altrowcolor}
+Dexlansoprazole & 19 & 10 & 9 & 52.6\% & 47.4\% \\
+Pantoprazole Sodium & 4 & 0 & 4 & 0.0\% & 100.0\% \\
+\rowcolor{altrowcolor}
+Famotidien & 3 & 2 & 1 & 66.7\% & 33.3\% \\
+Omeprazole & 2 & 1 & 1 & 50.0\% & 50.0\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Key Findings}
+
+\begin{itemize}
+\item \textbf{Total Dataset:} 331 patients across 9 generic drugs
+\item \textbf{Most Prescribed:} Esomeprazole with 214 patients (64.7\% of total)
+\item \textbf{Age Distribution:} Most patients fall in the 21-60 age range
+\item \textbf{Gender Balance:} Overall slight female predominance (53.5\% female vs 46.5\% male)
+\item \textbf{Peak Age Group:} 41-50 years shows highest patient count across multiple drugs
+\end{itemize}
+
+\section{Methodology}
+
+This analysis was conducted on a dataset of 331 patients prescribed various generic drugs. Age groups were categorized into 10-year intervals, and gender distribution was analyzed for each generic drug. The data provides insights into prescription patterns and patient demographics for proton pump inhibitors and related medications.
+
+\end{document}

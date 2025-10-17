@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 import seaborn as sns
+import matplotlib.patches as patches
 
 def load_and_analyze_data(filename):
     """Load Excel data and analyze generic names"""
@@ -282,9 +283,6 @@ def create_summary_statistics_table(df, generic_counts, output_dir):
         'Female Count': [],
         'Male Percentage': [],
         'Female Percentage': [],
-        'Age Mean': [],
-        'Age Median': [],
-        'Age Std': [],
         'Age Min': [],
         'Age Max': [],
         'Most Common Age Group': []
@@ -313,9 +311,6 @@ def create_summary_statistics_table(df, generic_counts, output_dir):
         summary_stats['Female Count'].append(female_count)
         summary_stats['Male Percentage'].append(f"{(male_count/total_patients*100):.1f}%")
         summary_stats['Female Percentage'].append(f"{(female_count/total_patients*100):.1f}%")
-        summary_stats['Age Mean'].append(f"{ages.mean():.1f}")
-        summary_stats['Age Median'].append(f"{ages.median():.1f}")
-        summary_stats['Age Std'].append(f"{ages.std():.1f}")
         summary_stats['Age Min'].append(ages.min())
         summary_stats['Age Max'].append(ages.max())
         summary_stats['Most Common Age Group'].append(most_common_age_group)
@@ -337,6 +332,309 @@ def create_summary_statistics_table(df, generic_counts, output_dir):
     
     return summary_df
 
+def create_ieee_standard_table_png(df, generic_counts, output_dir):
+    """Create IEEE standard borderless table PNG for journal publication"""
+    
+    # Prepare data for the main content table
+    table_data = []
+    
+    # Create headers similar to your demo table
+    headers = ["Generic Name", "Total\nPatients", "Male", "Female", "Male\n%", "Female\n%", 
+               "11-20", "21-30", "31-40", "41-50", "51-60", "61-70", "71-80", "81-90"]
+    
+    for generic, total_patients in generic_counts.items():
+        generic_data = df[df['Generic name'] == generic]
+        
+        # Get gender distribution
+        male_count, female_count = get_gender_distribution(generic_data)
+        male_pct = (male_count / total_patients * 100) if total_patients > 0 else 0
+        female_pct = (female_count / total_patients * 100) if total_patients > 0 else 0
+        
+        # Get age distribution by bins
+        bins, bin_labels, age_counts = create_age_bins(generic_data['Age'])
+        
+        # Create row data (excluding ages 0-10 and 91-100 for space)
+        row = [
+            generic.title(),
+            str(total_patients),
+            str(male_count),
+            str(female_count),
+            f"{male_pct:.1f}",
+            f"{female_pct:.1f}",
+            str(age_counts[1]),  # 11-20
+            str(age_counts[2]),  # 21-30
+            str(age_counts[3]),  # 31-40
+            str(age_counts[4]),  # 41-50
+            str(age_counts[5]),  # 51-60
+            str(age_counts[6]),  # 61-70
+            str(age_counts[7]),  # 71-80
+            str(age_counts[8])   # 81-90
+        ]
+        
+        table_data.append(row)
+    
+    # Create the table figure with IEEE standards
+    fig, ax = plt.subplots(figsize=(16, 10), dpi=300)
+    ax.axis('off')  # Remove axes
+    
+    # Create table
+    table = ax.table(cellText=table_data, 
+                     colLabels=headers,
+                     cellLoc='center', 
+                     loc='center',
+                     colWidths=[0.18, 0.08, 0.06, 0.06, 0.06, 0.06, 0.06, 0.06, 0.06, 0.06, 0.06, 0.06, 0.06, 0.06])
+    
+    # IEEE standard formatting - borderless and clean
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
+    table.scale(1.2, 2.0)
+    
+    # Remove all borders and set clean formatting
+    for i in range(len(headers)):
+        # Header formatting
+        cell = table[(0, i)]
+        cell.set_text_props(weight='bold', fontsize=10)
+        cell.set_facecolor('#f0f0f0')
+        cell.set_edgecolor('none')
+        cell.set_linewidth(0)
+        
+        # Add subtle bottom line for headers only
+        cell.set_edgecolor('black')
+        cell.set_linewidth(0.5)
+        cell.get_text().set_ha('center')
+        cell.get_text().set_va('center')
+    
+    # Format data cells
+    for i in range(1, len(table_data) + 1):
+        for j in range(len(headers)):
+            cell = table[(i, j)]
+            cell.set_facecolor('white')
+            cell.set_edgecolor('none')
+            cell.set_linewidth(0)
+            cell.get_text().set_fontsize(9)
+            cell.get_text().set_ha('center')
+            cell.get_text().set_va('center')
+            
+            # Alternate row colors for better readability
+            if i % 2 == 0:
+                cell.set_facecolor('#f9f9f9')
+    
+    # Add title
+    plt.title('Generic Drug Distribution Analysis - Patient Demographics and Age Groups', 
+              fontsize=14, fontweight='bold', pad=20)
+    
+    # Add subtitle with total information
+    plt.figtext(0.5, 0.02, f'Total Patients: {len(df)} | Total Generic Drugs: {len(generic_counts)} | Age Groups: Years', 
+                ha='center', fontsize=10, style='italic')
+    
+    # Adjust layout
+    plt.tight_layout()
+    
+    # Save as PNG
+    output_filename = os.path.join(output_dir, 'generic_drugs_comprehensive_table.png')
+    plt.savefig(output_filename, dpi=300, bbox_inches='tight', 
+                facecolor='white', edgecolor='none', format='png')
+    
+    print(f"\nIEEE Standard Table PNG saved: {output_filename}")
+    plt.close()
+    
+    return output_filename
+
+def create_summary_statistics_table_png(df, generic_counts, output_dir):
+    """Create a summary statistics table PNG following IEEE standards"""
+    
+    # Prepare summary data
+    table_data = []
+    headers = ["Generic Name", "Total\nPatients", "Gender Distribution", "Age Statistics", "Most Common\nAge Group"]
+    
+    for generic, total_patients in generic_counts.items():
+        generic_data = df[df['Generic name'] == generic]
+        
+        # Get gender distribution
+        male_count, female_count = get_gender_distribution(generic_data)
+        gender_info = f"M: {male_count} ({male_count/total_patients*100:.1f}%)\nF: {female_count} ({female_count/total_patients*100:.1f}%)"
+        
+        # Get age statistics
+        ages = generic_data['Age']
+        age_info = f"Range: {ages.min()}-{ages.max()}\nMean: {ages.mean():.1f}±{ages.std():.1f}"
+        
+        # Get most common age group
+        bins, bin_labels, age_counts = create_age_bins(ages)
+        max_age_group_idx = np.argmax(age_counts)
+        most_common_age_group = f"{bin_labels[max_age_group_idx]}\n({age_counts[max_age_group_idx]} patients)"
+        
+        row = [
+            generic.title(),
+            str(total_patients),
+            gender_info,
+            age_info,
+            most_common_age_group
+        ]
+        
+        table_data.append(row)
+    
+    # Create figure
+    fig, ax = plt.subplots(figsize=(14, 8), dpi=300)
+    ax.axis('off')
+    
+    # Create table
+    table = ax.table(cellText=table_data,
+                     colLabels=headers,
+                     cellLoc='center',
+                     loc='center',
+                     colWidths=[0.25, 0.12, 0.25, 0.25, 0.18])
+    
+    # IEEE standard formatting
+    table.auto_set_font_size(False)
+    table.set_fontsize(9)
+    table.scale(1.2, 2.5)
+    
+    # Format headers
+    for i in range(len(headers)):
+        cell = table[(0, i)]
+        cell.set_text_props(weight='bold', fontsize=10)
+        cell.set_facecolor('#e6e6e6')
+        cell.set_edgecolor('black')
+        cell.set_linewidth(0.5)
+        cell.get_text().set_ha('center')
+        cell.get_text().set_va('center')
+    
+    # Format data cells
+    for i in range(1, len(table_data) + 1):
+        for j in range(len(headers)):
+            cell = table[(i, j)]
+            cell.set_facecolor('white')
+            cell.set_edgecolor('none')
+            cell.set_linewidth(0)
+            cell.get_text().set_fontsize(8)
+            cell.get_text().set_ha('center')
+            cell.get_text().set_va('center')
+            
+            if i % 2 == 0:
+                cell.set_facecolor('#f5f5f5')
+    
+    # Add title
+    plt.title('Generic Drug Summary Statistics - Comprehensive Overview', 
+              fontsize=14, fontweight='bold', pad=20)
+    
+    # Add subtitle
+    plt.figtext(0.5, 0.02, f'Summary of {len(generic_counts)} Generic Drugs | Total Dataset: {len(df)} Patients', 
+                ha='center', fontsize=10, style='italic')
+    
+    plt.tight_layout()
+    
+    # Save as PNG
+    output_filename = os.path.join(output_dir, 'generic_drugs_summary_statistics.png')
+    plt.savefig(output_filename, dpi=300, bbox_inches='tight', 
+                facecolor='white', edgecolor='none', format='png')
+    
+    print(f"\nSummary Statistics Table PNG saved: {output_filename}")
+    plt.close()
+    
+    return output_filename
+
+def create_age_distribution_table_png(df, generic_counts, output_dir):
+    """Create detailed age distribution table PNG for all generic drugs"""
+    
+    # Prepare age distribution data
+    table_data = []
+    headers = ["Generic Name", "0-10", "11-20", "21-30", "31-40", "41-50", "51-60", "61-70", "71-80", "81-90", "91-100", "Total"]
+    
+    for generic, total_patients in generic_counts.items():
+        generic_data = df[df['Generic name'] == generic]
+        
+        # Get age distribution by bins
+        bins, bin_labels, age_counts = create_age_bins(generic_data['Age'])
+        
+        row = [generic.title()] + [str(count) for count in age_counts] + [str(total_patients)]
+        table_data.append(row)
+    
+    # Create figure
+    fig, ax = plt.subplots(figsize=(16, 8), dpi=300)
+    ax.axis('off')
+    
+    # Create table
+    table = ax.table(cellText=table_data,
+                     colLabels=headers,
+                     cellLoc='center',
+                     loc='center',
+                     colWidths=[0.2] + [0.07]*10 + [0.08])
+    
+    # IEEE standard formatting
+    table.auto_set_font_size(False)
+    table.set_fontsize(9)
+    table.scale(1.2, 2.0)
+    
+    # Format headers
+    for i in range(len(headers)):
+        cell = table[(0, i)]
+        cell.set_text_props(weight='bold', fontsize=10)
+        cell.set_facecolor('#d4d4d4')
+        cell.set_edgecolor('black')
+        cell.set_linewidth(0.5)
+        cell.get_text().set_ha('center')
+        cell.get_text().set_va('center')
+    
+    # Format data cells with color coding for values
+    for i in range(1, len(table_data) + 1):
+        for j in range(len(headers)):
+            cell = table[(i, j)]
+            cell.set_edgecolor('none')
+            cell.set_linewidth(0)
+            cell.get_text().set_fontsize(9)
+            cell.get_text().set_ha('center')
+            cell.get_text().set_va('center')
+            
+            # Color coding for better visualization
+            if j == 0:  # Generic name column
+                cell.set_facecolor('#f0f0f0')
+                cell.get_text().set_weight('bold')
+            elif j == len(headers) - 1:  # Total column
+                cell.set_facecolor('#e6e6e6')
+                cell.get_text().set_weight('bold')
+            else:
+                # Age group columns - color based on value
+                try:
+                    value = int(table_data[i-1][j])
+                    if value == 0:
+                        cell.set_facecolor('white')
+                    elif value <= 5:
+                        cell.set_facecolor('#fff2cc')
+                    elif value <= 15:
+                        cell.set_facecolor('#ffd966')
+                    else:
+                        cell.set_facecolor('#ff9900')
+                        cell.get_text().set_weight('bold')
+                except:
+                    cell.set_facecolor('white')
+            
+            # Alternate row background
+            if i % 2 == 0:
+                if j == 0:
+                    cell.set_facecolor('#e8e8e8')
+                elif j == len(headers) - 1:
+                    cell.set_facecolor('#d4d4d4')
+    
+    # Add title
+    plt.title('Age Distribution Analysis by Generic Drug - Detailed Breakdown', 
+              fontsize=14, fontweight='bold', pad=20)
+    
+    # Add legend explanation
+    plt.figtext(0.5, 0.02, 'Color Legend: White (0 patients) | Light Yellow (1-5 patients) | Yellow (6-15 patients) | Orange (>15 patients)', 
+                ha='center', fontsize=9, style='italic')
+    
+    plt.tight_layout()
+    
+    # Save as PNG
+    output_filename = os.path.join(output_dir, 'generic_drugs_age_distribution_detailed.png')
+    plt.savefig(output_filename, dpi=300, bbox_inches='tight', 
+                facecolor='white', edgecolor='none', format='png')
+    
+    print(f"\nDetailed Age Distribution Table PNG saved: {output_filename}")
+    plt.close()
+    
+    return output_filename
+
 def main():
     """Main function to run the analysis"""
     try:
@@ -345,7 +643,7 @@ def main():
         os.makedirs(output_dir, exist_ok=True)
         
         # Load data
-        df, generic_counts = load_and_analyze_data('521.xlsx')
+        df, generic_counts = load_and_analyze_data('../521.xlsx')
         
         # Get color schemes
         color_schemes = get_color_schemes()
@@ -373,19 +671,41 @@ def main():
         comprehensive_table = create_comprehensive_table(df, generic_counts, output_dir)
         summary_stats_table = create_summary_statistics_table(df, generic_counts, output_dir)
         
+        # Create IEEE standard table PNGs for journal publication
+        print(f"\n{'='*70}")
+        print("GENERATING IEEE STANDARD TABLE PNGs FOR JOURNAL PUBLICATION...")
+        print(f"{'='*70}")
+        
+        # Create comprehensive table PNG
+        comprehensive_png = create_ieee_standard_table_png(df, generic_counts, output_dir)
+        
+        # Create summary statistics table PNG
+        summary_png = create_summary_statistics_table_png(df, generic_counts, output_dir)
+        
+        # Create detailed age distribution table PNG
+        age_dist_png = create_age_distribution_table_png(df, generic_counts, output_dir)
+        
         print(f"\n{'='*70}")
         print("All graphs and tables generated successfully!")
         print(f"Graph files created: {len(generated_files)}")
-        print(f"Table files created: 3")
+        print(f"Table files created: 6 (3 data files + 3 PNG images)")
         print(f"Output directory: {output_dir}/")
         print("\nGraph files:")
         for file in generated_files:
             print(f"  - {os.path.basename(file)}")
-        print("\nTable files:")
+        print("\nData Table files:")
         print(f"  - generic_drugs_summary.txt")
         print(f"  - generic_drugs_comprehensive_table.csv")
         print(f"  - generic_drugs_comprehensive_table.txt")
         print(f"  - generic_drugs_summary_statistics.csv")
+        print("\nJournal-Ready Table PNG files (IEEE Standard):")
+        print(f"  - generic_drugs_comprehensive_table.png")
+        print(f"  - generic_drugs_summary_statistics.png")
+        print(f"  - generic_drugs_age_distribution_detailed.png")
+        print(f"{'='*70}")
+        print("📊 IEEE Standard borderless tables created for journal publication!")
+        print("✅ All tables follow journal formatting standards")
+        print("🎯 Ready for publication submission")
         print(f"{'='*70}")
         
     except FileNotFoundError:

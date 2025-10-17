@@ -1,0 +1,261 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper, margin=0.75in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{siunitx}
+
+% Times New Roman font settings
+\usepackage{mathptmx} % Times font for text and math
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Define colors for IEEE standard
+\definecolor{headercolor}{HTML}{E8F4F8}
+\definecolor{altrowcolor}{HTML}{F5F5F5}
+\definecolor{accentcolor}{HTML}{2E86AB}
+
+\begin{document}
+
+\title{Age Distribution Analysis of Patient Population\\{\large Comprehensive Demographic Study}}
+\author{}
+\date{}
+\maketitle
+
+\section{Age Distribution Overview}
+
+This analysis presents the age distribution patterns across 331 patients from the medical dataset, providing insights into demographic characteristics and age-related healthcare utilization patterns.
+
+\section{Age Distribution Data Table}
+
+\begin{table}[h!]
+\centering
+\caption{Patient Age Distribution by Decade Groups}
+\begin{tabular}{c|c|c|c|c}
+\toprule
+\rowcolor{headercolor}
+\textbf{Age Group} & \textbf{Number of} & \textbf{Percentage} & \textbf{Cumulative} & \textbf{Cumulative} \\
+\rowcolor{headercolor}
+\textbf{(years)} & \textbf{Patients} & \textbf{(\%)} & \textbf{Count} & \textbf{Percentage (\%)} \\
+\midrule
+0--10 & 0 & 0.0 & 0 & 0.0 \\
+\rowcolor{altrowcolor}
+11--20 & 11 & 3.3 & 11 & 3.3 \\
+21--30 & 40 & 12.1 & 51 & 15.4 \\
+\rowcolor{altrowcolor}
+31--40 & 57 & 17.2 & 108 & 32.6 \\
+41--50 & 83 & 25.1 & 191 & 57.7 \\
+\rowcolor{altrowcolor}
+51--60 & 78 & 23.6 & 269 & 81.3 \\
+61--70 & 41 & 12.4 & 310 & 93.7 \\
+\rowcolor{altrowcolor}
+71--80 & 17 & 5.1 & 327 & 98.8 \\
+81--90 & 3 & 0.9 & 330 & 99.7 \\
+\rowcolor{altrowcolor}
+91--100 & 1 & 0.3 & 331 & 100.0 \\
+\midrule
+\rowcolor{headercolor}
+\textbf{Total} & \textbf{331} & \textbf{100.0} & \textbf{331} & \textbf{100.0} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Statistical Summary}
+
+\subsection{Descriptive Statistics}
+
+\begin{table}[h!]
+\centering
+\caption{Age Distribution Statistical Measures}
+\begin{tabular}{l|c}
+\toprule
+\rowcolor{headercolor}
+\textbf{Statistical Measure} & \textbf{Value} \\
+\midrule
+Total Patients & 331 \\
+\rowcolor{altrowcolor}
+Modal Age Group & 41--50 years (83 patients) \\
+Peak Age Range & 41--60 years (161 patients, 48.7\%) \\
+\rowcolor{altrowcolor}
+Young Adults (21--40) & 97 patients (29.3\%) \\
+Middle-aged (41--60) & 161 patients (48.7\%) \\
+\rowcolor{altrowcolor}
+Elderly (61+) & 62 patients (18.7\%) \\
+Pediatric (0--20) & 11 patients (3.3\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Age Group Categories}
+
+\begin{table}[h!]
+\centering
+\caption{Consolidated Age Categories for Clinical Analysis}
+\begin{tabular}{l|c|c|l}
+\toprule
+\rowcolor{headercolor}
+\textbf{Age Category} & \textbf{Age Range} & \textbf{Count} & \textbf{Percentage} \\
+\midrule
+Pediatric \& Adolescent & 0--20 years & 11 & 3.3\% \\
+\rowcolor{altrowcolor}
+Young Adult & 21--40 years & 97 & 29.3\% \\
+Middle-aged & 41--60 years & 161 & 48.7\% \\
+\rowcolor{altrowcolor}
+Elderly & 61--80 years & 58 & 17.5\% \\
+Very Elderly & 81+ years & 4 & 1.2\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Key Demographic Insights}
+
+\subsection{Age Distribution Patterns}
+
+\begin{itemize}
+\item \textbf{Peak Demographics:} The largest patient group falls within the 41--50 age range (83 patients, 25.1\%)
+\item \textbf{Working Age Dominance:} Combined 31--60 age groups represent 218 patients (65.9\% of total population)
+\item \textbf{Middle-age Concentration:} 41--60 age groups account for 161 patients (48.7\% of total)
+\item \textbf{Limited Pediatric Representation:} Only 11 patients (3.3\%) under age 20
+\item \textbf{Elderly Care Needs:} 62 patients (18.7\%) are 61 years or older
+\end{itemize}
+
+\subsection{Clinical Implications}
+
+\begin{itemize}
+\item \textbf{Healthcare Utilization:} Peak utilization in 41--60 age group suggests high prevalence of chronic conditions in middle age
+\item \textbf{Preventive Care Opportunities:} Large young adult population (29.3\%) presents opportunities for preventive interventions
+\item \textbf{Geriatric Considerations:} Nearly 1 in 5 patients requires age-specific geriatric care considerations
+\item \textbf{Workforce Health:} High representation of working-age adults (31--60 years) indicates significant occupational health implications
+\end{itemize}
+
+\section{Age-Related Healthcare Patterns}
+
+\subsection{Distribution Analysis by Quartiles}
+
+\begin{table}[h!]
+\centering
+\caption{Population Quartile Analysis}
+\begin{tabular}{l|c|c|c}
+\toprule
+\rowcolor{headercolor}
+\textbf{Quartile} & \textbf{Cumulative \%} & \textbf{Age Range} & \textbf{Patient Count} \\
+\midrule
+First Quartile (Q1) & 25\% & 11--38 years & 83 patients \\
+\rowcolor{altrowcolor}
+Second Quartile (Q2) & 50\% & 39--49 years & 82 patients \\
+Third Quartile (Q3) & 75\% & 50--58 years & 83 patients \\
+\rowcolor{altrowcolor}
+Fourth Quartile (Q4) & 100\% & 59--100 years & 83 patients \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Age Group Risk Stratification}
+
+\begin{table}[h!]
+\centering
+\caption{Risk Categories by Age Groups}
+\begin{tabular}{l|c|l}
+\toprule
+\rowcolor{headercolor}
+\textbf{Risk Category} & \textbf{Patient Count} & \textbf{Healthcare Considerations} \\
+\midrule
+Low Risk (21--40) & 97 & Preventive care, lifestyle counseling \\
+\rowcolor{altrowcolor}
+Moderate Risk (41--60) & 161 & Chronic disease screening, management \\
+High Risk (61--80) & 58 & Comprehensive geriatric assessment \\
+\rowcolor{altrowcolor}
+Very High Risk (81+) & 4 & Intensive monitoring, palliative considerations \\
+Special Population (0--20) & 11 & Pediatric/adolescent specialized care \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Comparative Demographics}
+
+\subsection{Age Distribution Characteristics}
+
+\begin{itemize}
+\item \textbf{Normal Distribution Tendency:} The age distribution shows characteristics of a right-skewed normal distribution
+\item \textbf{Central Tendency:} Concentration around middle age (40--60 years) suggests typical healthcare-seeking behavior
+\item \textbf{Minimal Extremes:} Very low representation at both pediatric (3.3\%) and very elderly (1.2\%) extremes
+\item \textbf{Healthcare Demand Peak:} The 41--60 age group peak aligns with typical onset of chronic conditions
+\end{itemize}
+
+\subsection{Population Health Implications}
+
+\begin{enumerate}
+\item \textbf{Resource Allocation:} Healthcare resources should prioritize middle-aged patient care infrastructure
+\item \textbf{Preventive Programs:} Strong focus needed on preventive care for the large 21--40 age group
+\item \textbf{Chronic Disease Management:} Comprehensive programs required for the 48.7\% middle-aged population
+\item \textbf{Geriatric Services:} Specialized geriatric services needed for 18.7\% elderly population
+\item \textbf{Pediatric Considerations:} Limited but important pediatric care capacity requirements
+\end{enumerate}
+
+\section{Statistical Validation}
+
+\begin{table}[h!]
+\centering
+\caption{Data Quality and Validation Metrics}
+\begin{tabular}{l|c}
+\toprule
+\rowcolor{headercolor}
+\textbf{Validation Metric} & \textbf{Result} \\
+\midrule
+Total Patient Count & 331 patients \\
+\rowcolor{altrowcolor}
+Data Completeness & 100\% (no missing age data) \\
+Age Range Coverage & 11--100 years \\
+\rowcolor{altrowcolor}
+Largest Single Group & 41--50 years (25.1\%) \\
+Smallest Non-zero Group & 91--100 years (0.3\%) \\
+\rowcolor{altrowcolor}
+Median Age Group & 41--50 years \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Methodology and Data Source}
+
+\subsection{Data Collection}
+\begin{itemize}
+\item \textbf{Source:} Medical dataset (521.xlsx)
+\item \textbf{Sample Size:} 331 patients
+\item \textbf{Age Grouping:} 10-year intervals for demographic analysis
+\item \textbf{Data Validation:} Complete age information for all patients
+\end{itemize}
+
+\subsection{Statistical Methods}
+\begin{itemize}
+\item \textbf{Descriptive Statistics:} Frequency distribution and percentage calculations
+\item \textbf{Categorical Analysis:} Age group consolidation for clinical relevance
+\item \textbf{Cumulative Analysis:} Progressive percentage calculations for quartile identification
+\item \textbf{Risk Stratification:} Age-based risk category assignments
+\end{itemize}
+
+\section{Conclusions}
+
+The age distribution analysis reveals a patient population predominantly composed of middle-aged adults (41--60 years, 48.7\%), with significant representation of young adults (21--40 years, 29.3\%) and moderate elderly participation (61+ years, 18.7\%). This distribution pattern suggests a healthcare system primarily serving working-age adults with emerging chronic conditions, while maintaining capacity for preventive care in younger populations and specialized geriatric services for older patients.
+
+The demographic profile indicates optimal resource allocation should focus on:
+\begin{enumerate}
+\item Chronic disease management for middle-aged patients
+\item Preventive health programs for young adults
+\item Specialized geriatric care for elderly patients
+\item Limited but essential pediatric services
+\end{enumerate}
+
+\vspace{1cm}
+
+\textbf{Analysis Date:} October 2025\\
+\textbf{Dataset:} 521.xlsx medical records\\
+\textbf{Font Standard:} Times New Roman (mathptmx)\\
+\textbf{Formatting:} IEEE journal guidelines
+
+\end{document}
